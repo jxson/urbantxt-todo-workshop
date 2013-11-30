@@ -14,5 +14,11 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jxson/urbantxt-todo-workshop/issues"
+  },
+  "dependencies": {
+    "colors": "~0.6.2",
+    "st": "~0.2.3",
+    "browserify": "~2.36.0",
+    "marked": "~0.2.10"
   }
 }
