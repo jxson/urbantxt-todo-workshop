@@ -143,3 +143,55 @@ Open Google Chrome and visit your index. Open the debugger by pressing the "opti
 
 You should see your message that you passed to `console.log`.
 
+# Setting up the HTML
+
+We should add a form to the HTML page and a container to hold the items in our todo list.
+
+    <h1>TODO List</h1>
+
+    <form class="js-add-todo">
+      <label>
+        Add:
+        <input placeholder="New item">
+      </label>
+    </form>
+
+    <div class="todo-list">
+    </div>
+
+I like to add classes to things in a way that makes it clear when JS is going to interact with a DOM node. In the example above the class name `js-add-todo` is very clear about what is going to happen when that link gets clicked.
+
+Anything without the `js-` prefix can be used as normal CSS selectors.
+
+# Adding a click handler
+
+Now we need to make our link do something via our JS instead of it's default behavior. First create a variable for the DOM element inside the `domready` callback using the `document.querySelector()` method.
+
+    var form = document.querySelector('.js-add-todo')
+
+We can add an event handler using `link.addEventListener()`
+
+    form.addEventListener('submit', onsubmit)
+
+And then define a function called `onclick`
+
+    function onsubmit(event){
+      // Prevent default behavior and the even from bubbling up
+      event.stopPropagation()
+      event.preventDefault()
+
+      var form =
+      var input =
+
+      console.log('submitted!')
+    }
+
+
+Resources:
+
+* https://developer.mozilla.org/en-US/docs/Web/API/document.querySelector
+* https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener
+
+# Making the link do something
+
+Now we need the link to append
