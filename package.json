@@ -4,6 +4,7 @@
   "description": "UrbanTXT workshop for making a TODO app with HTML5",
   "main": "index.js",
   "scripts": {
+    "watch": "watchify browser/index.js -o public/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,8 @@
     "colors": "~0.6.2",
     "st": "~0.2.3",
     "browserify": "~2.36.0",
-    "marked": "~0.2.10"
+    "marked": "~0.2.10",
+    "watchify": "~0.4.1",
+    "domready": "~0.2.13"
   }
 }
