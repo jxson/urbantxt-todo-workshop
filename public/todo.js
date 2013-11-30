@@ -1,7 +1,5 @@
 
-var domready = require('domready')
-
-domready(function() {
+document.addEventListener('DOMContentLoaded', function() {
   console.log('domready')
 
   var add = document.querySelector('.js-add-todo')
