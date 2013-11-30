@@ -1,0 +1,18 @@
+{
+  "name": "urbantxt-todo-workshop",
+  "version": "0.0.0",
+  "description": "UrbanTXT workshop for making a TODO app with HTML5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jxson/urbantxt-todo-workshop.git"
+  },
+  "author": "Jason Campbell <jason@artifcat.sh> (http://artifact.sh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jxson/urbantxt-todo-workshop/issues"
+  }
+}
