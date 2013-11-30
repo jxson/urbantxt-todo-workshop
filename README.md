@@ -111,8 +111,8 @@ We should add a form to the HTML page and a container to hold the items in our t
       </label>
     </form>
 
-    <div class="todo-list">
-    </div>
+    <form class="todo-list">
+    </form>
 
 I like to add classes to things in a way that makes it clear when JS is going to interact with a DOM node. In the example above the class name `js-add-todo` is very clear about what is going to happen when that link gets clicked.
 
