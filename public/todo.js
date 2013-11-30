@@ -51,7 +51,7 @@ function onclick(event){
   if (event.target.nodeName !== 'LABEL') return
 
   var label = event.target
-  var input = form.querySelector('input')
+  var input = label.querySelector('input')
 
   // wont be checked until right after this event
   if (input.checked === false) {
