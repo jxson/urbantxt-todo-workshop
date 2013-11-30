@@ -43,18 +43,16 @@ Now change into your directory with the `cd` command:
 We really only need a few files but I like to orginize my projects this way:
 
     - my-todo-app
-      +- browser
-      |  +- index.js
       +- public
       |  +- index.html
+      |  +- todo.js
       + README.md
 
 You can create more directories using the `mkdir` command, and empty files with the touch command:
 
     mkdir public
     touch public/index.html
-
-Create the `browser/index.js` directory and file on your own.
+    touch public/todo.js
 
 **TIP:** most commands have a way to learn about how to use them. Try typing `man mkdir` to learn more about it. The `man` command is useful to learn about most commands.
 
@@ -64,64 +62,11 @@ Resources:
 * http://en.wikipedia.org/wiki/Touch_(Unix)
 * http://en.wikipedia.org/wiki/Cd_(command)
 
-# Bonus: Node.js, NPM, Browserify
-
-If possible install Node.js by following the install link at http://nodejs.org
-
-This will give you the `node` command as well as the `npm` command.
-
-## NPM
-
-NPM is the Node Package Manager, even though Node.js os for writing server side code in JS there are a lot of packages on http://npmjs.org that work in the browser.
-
-## Browserify
-
-Browserify lets us create small node style modules that can then be compiled into a single script and included in your `index.html`. First install `browserify`:
-
-    npm install browserify
-
-Now we can use browserify to convert your node style code into the bundle file with:
-
-    browserify browser/index.js -o public/bundle.js
-
-Why is this a good idea?
-
-* Separation of concerns
-* Single responsibility
-* Code reuse
-
-## Using node modules
-
-In your `browser/index.js` file we can use node's `require` method.
-
-    var domready = require('domready')
-
-    domready(function() {
-      console.log('domready')
-    })
-
-`domready` is a function takes a callback which will get fired when the DOM is ready for action. But before we can load it we need to make sure it is installed:
-
-    npm install domready
-
-This will install `domready` into the `node_modules` directory. When you use `var domeardy = require('domready')` the module will be loaded and assigned to your variable.
-
-Now you can run `browserify` to build your `public/bundle.js` file.
-
-    browserify browser/index.js -o public/bundle.js
-
-Resources:
-
-* http://nodejs.org
-* http://npmjs.org
-* http://npmjs.org/package/browserify
-* http://npmjs.org/package/domready
-
 # Adding JS
 
 Add the JS to your HTML file using a script tag. You can [learn about script tags on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script).
 
-    <script src="/bundle.js"></script>
+    <script src="todo.js"></script>
 
 ## Paths
 
@@ -136,6 +81,16 @@ All paths are relative to the `cwd` or in HTML relative to the file.
 `/foo.html` means the `foo.html` file living at the document root
 
 `bar.html` means the `bar.html` file living at next to the file
+
+# domready
+
+Add a DOMContentLoaded event handler:
+
+    document.addEventListener('DOMContentLoaded', function(event) {
+        console.log('DOM loaded')
+    })
+
+* https://developer.mozilla.org/en-US/docs/Web/Reference/Events/DOMContentLoaded
 
 # CHECK YOUR WORK!
 
