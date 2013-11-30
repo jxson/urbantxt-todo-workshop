@@ -135,9 +135,6 @@ And then define a function called `onclick`
       event.stopPropagation()
       event.preventDefault()
 
-      var form =
-      var input =
-
       console.log('submitted!')
     }
 
